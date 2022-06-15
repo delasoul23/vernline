@@ -1,0 +1,19 @@
+{
+  "dataServiceGeneratorVersion": "0.13.0",
+  "appInfo": {
+    "name": "Vernline",
+    "description": "A App to show and sell my artworks",
+    "version": "6nwakmxl",
+    "id": "cl4fam8be140552401hnskht8nbf",
+    "url": "https://server.amplication.com/cl4fam8be140552401hnskht8nbf",
+    "settings": {
+      "dbHost": "localhost",
+      "dbName": "",
+      "dbPassword": "admin",
+      "dbPort": 5432,
+      "dbUser": "admin",
+      "appId": "cl4fam8be140552401hnskht8nbf",
+      "authProvider": "Jwt"
+    }
+  }
+}
