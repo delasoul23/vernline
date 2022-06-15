@@ -1,0 +1,43 @@
+datasource postgres {
+  provider = "postgresql"
+  url      = env("POSTGRESQL_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  createdAt DateTime @default(now())
+  firstName String?
+  id        String   @id @default(cuid())
+  lastName  String?
+  password  String
+  roles     String[]
+  updatedAt DateTime @updatedAt
+  username  String   @unique
+}
+
+model Root {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
+
+model Customer {
+  allPurchases   Item?     @relation(fields: [allPurchasesId], references: [id])
+  allPurchasesId String?
+  createdAt      DateTime  @default(now())
+  id             String    @id @default(cuid())
+  lastPurchase   DateTime?
+  roles          String?
+  updatedAt      DateTime  @updatedAt
+  username       String?
+}
+
+model Item {
+  createdAt DateTime   @default(now())
+  customer  Customer[]
+  id        String     @id @default(cuid())
+  updatedAt DateTime   @updatedAt
+}
